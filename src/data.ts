@@ -62,7 +62,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     title: 'Green Realm Landscape',
     category: 'Landscape Architecture',
     year: '2026',
-    image: '/photos/Green+%20Realm%20Desk%20Showcase.png',
+    image: '/photos/green-realm-showcase.png',
     link: 'https://www.greenrealmlandscape.com/',
   },
   {
