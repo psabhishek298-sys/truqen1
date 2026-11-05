@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -8,22 +8,19 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ContactModal } from './components/ContactModal';
-import { ProjectModal } from './components/ProjectModal';
 
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { WorkPage } from './pages/WorkPage';
-import { ProcessPage } from './pages/ProcessPage';
 import { ContactPage } from './pages/ContactPage';
 
-import type { ServiceItem, ProjectItem } from './types';
+import type { ServiceItem } from './types';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function App() {
   const [isContactModalOpen, setIsContactModalOpen] = React.useState(false);
   const [selectedService, setSelectedService] = React.useState<ServiceItem | null>(null);
-  const [selectedProject, setSelectedProject] = React.useState<ProjectItem | null>(null);
 
   // Initialize Lenis Smooth Scroll and sync with GSAP
   useEffect(() => {
@@ -54,10 +51,6 @@ export function App() {
     setIsContactModalOpen(true);
   };
 
-  const handleSelectProject = (project: ProjectItem) => {
-    setSelectedProject(project);
-  };
-
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -76,11 +69,8 @@ export function App() {
               element={<HomePage onSelectService={handleSelectService} />}
             />
             <Route path="/about" element={<AboutPage />} />
-            <Route
-              path="/work"
-              element={<WorkPage onSelectProject={handleSelectProject} />}
-            />
-            <Route path="/process" element={<ProcessPage />} />
+            <Route path="/work" element={<WorkPage />} />
+            <Route path="/process" element={<Navigate to="/" replace />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>
@@ -95,14 +85,6 @@ export function App() {
           preselectedService={selectedService}
         />
 
-        <ProjectModal
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-          onInquire={() => {
-            setSelectedProject(null);
-            setIsContactModalOpen(true);
-          }}
-        />
       </div>
     </BrowserRouter>
   );

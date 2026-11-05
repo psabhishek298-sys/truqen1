@@ -10,7 +10,6 @@ export const Navbar: React.FC = () => {
     { label: 'HOME', path: '/' },
     { label: 'ABOUT', path: '/about' },
     { label: 'WORK', path: '/work' },
-    { label: 'PROCESS', path: '/process' },
     { label: 'CONTACT', path: '/contact' },
   ];
 

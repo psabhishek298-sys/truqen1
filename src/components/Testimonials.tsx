@@ -3,16 +3,16 @@ import React from 'react';
 const TESTIMONIALS = [
   {
     id: 'arjun',
-    name: 'Arjun Nair',
-    role: 'Founder, Green Realm Landscape',
-    image: '/assets/testimonials/arjun-nair.webp',
+    name: 'Ar.Sibin.M.Sabu',
+    role: 'Principle Architect, Green Realm Landscape',
+    image: '/assets/testimonials/sibin-sabu.png',
     quote:
       'TRUQEN delivered a clean, modern, and high-performing website for our business. The design, speed, and overall experience were exactly what we needed.',
   },
   {
     id: 'sneha',
     name: 'Sneha P',
-    role: 'Owner, Panappetty Finance',
+    role: 'Owner, ',
     image: '/assets/testimonials/sneha-p.webp',
     quote:
       'Professional, responsive, and easy to work with. TRUQEN understood our requirements perfectly and built a solution that truly added value to our business.',
@@ -62,7 +62,7 @@ export const Testimonials: React.FC = () => (
                 <img
                   src={testimonial.image}
                   alt={`${testimonial.name}, ${testimonial.role}`}
-                  className="h-full w-full scale-110 object-cover"
+                  className={`h-full w-full object-cover ${testimonial.id === 'arjun' ? 'scale-125 origin-top' : 'scale-110'}`}
                   loading="lazy"
                 />
               </span>

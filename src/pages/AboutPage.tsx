@@ -63,16 +63,26 @@ export const AboutPage: React.FC = () => {
 
   return (
     <div ref={pageRef} className="pt-24">
-      <header className="mx-auto max-w-7xl px-6 pb-14 pt-10 md:px-12 md:pb-20">
-        <div className="mb-6 flex items-center gap-3 font-accent text-xs font-semibold uppercase tracking-[0.3em] text-[#D41514]">
-          <span>// STUDIO PROFILE</span>
+      <header className="mx-auto grid max-w-7xl items-center gap-8 px-6 pb-14 pt-10 md:px-12 md:pb-20 lg:grid-cols-12 lg:gap-12">
+        <div className="lg:col-span-6">
+          <div className="mb-6 flex items-center gap-3 font-accent text-xs font-semibold uppercase tracking-[0.3em] text-[#D41514]">
+            <span>// STUDIO PROFILE</span>
+          </div>
+          <h1 className="max-w-6xl font-serif text-5xl font-normal leading-[1.04] tracking-tight text-[#111111] sm:text-7xl lg:text-7xl xl:text-8xl">
+            Ideas Made <span className="italic text-[#D41514]">Real.</span>
+          </h1>
+          <p className="mt-6 max-w-3xl text-base leading-7 text-[#263344] sm:text-lg sm:leading-8">
+            TRUQEN builds websites, mobile apps, and software that help businesses grow. We turn clear ideas into useful digital products.
+          </p>
         </div>
-        <h1 className="max-w-6xl font-serif text-5xl font-normal leading-[1.04] tracking-tight text-[#111111] sm:text-7xl md:text-8xl">
-          Ideas Made <span className="italic text-[#D41514]">Real.</span>
-        </h1>
-        <p className="mt-6 max-w-3xl text-base leading-7 text-[#263344] sm:text-lg sm:leading-8">
-          TRUQEN builds websites, mobile apps, and software that help businesses grow. We turn clear ideas into useful digital products.
-        </p>
+        <div className="flex justify-center lg:col-span-6" data-about-reveal>
+          <img
+            src="/assets/about-studio.webp"
+            alt="TRUQEN workspace with a laptop and books for web development, UI and UX design, mobile app development, and custom software development"
+            className="h-auto w-full object-contain drop-shadow-[0_24px_32px_rgba(17,17,17,0.18)] lg:scale-105"
+            fetchPriority="high"
+          />
+        </div>
       </header>
 
       <section aria-labelledby="our-story-title" className="px-6 py-14 md:px-12 md:py-20">

@@ -9,6 +9,7 @@ import {
   Mail,
   MapPin,
   MessageCircle,
+  Phone,
   PanelsTopLeft,
   ShoppingCart,
   Smartphone,
@@ -60,9 +61,11 @@ const FormField: React.FC<{
 
 export const Contact: React.FC<ContactProps> = ({ onDirectSubmitSuccess }) => {
   const [submitted, setSubmitted] = useState(false);
+  const isMobileDevice = typeof navigator !== 'undefined' && /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    mobile: '',
     service: SERVICES_DATA[0]?.title ?? '',
     subject: '',
     message: '',
@@ -106,13 +109,43 @@ export const Contact: React.FC<ContactProps> = ({ onDirectSubmitSuccess }) => {
               <a className="transition-colors hover:text-[#D41514]" href="mailto:truqenco@gmail.com">truqenco@gmail.com</a>
             </ContactDetail>
             <ContactDetail icon={MessageCircle} title="Chat on WhatsApp">
-              <a className="transition-colors hover:text-[#D41514]" href="https://wa.me/919207322053" target="_blank" rel="noreferrer">+91 9207322053</a>
-              <a className="transition-colors hover:text-[#D41514]" href="https://wa.me/917994828412" target="_blank" rel="noreferrer">+91 7994828412</a>
+              <a className="block leading-6 transition-colors hover:text-[#D41514]" href={isMobileDevice ? 'tel:+919207322053' : 'https://wa.me/919207322053'} target={isMobileDevice ? undefined : '_blank'} rel={isMobileDevice ? undefined : 'noreferrer'}>+91 9207322053</a>
+              <a className="block leading-6 transition-colors hover:text-[#D41514]" href={isMobileDevice ? 'tel:+917994828412' : 'https://wa.me/917994828412'} target={isMobileDevice ? undefined : '_blank'} rel={isMobileDevice ? undefined : 'noreferrer'}>+91 7994828412</a>
 
             </ContactDetail>
             <ContactDetail icon={MapPin} title="Our Location">
-              Kozhikode, Kerala, India
+              Kerala, India
             </ContactDetail>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-3" aria-label="Connect with TRUQEN">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2.5 rounded-lg border border-[#C13584]/20 px-4 py-2.5 text-sm text-[#111111] transition-colors hover:border-[#C13584]/45 hover:bg-[#C13584]/[0.035]"
+            >
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white shadow-sm">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="17.6" cy="6.5" r="1.1" fill="currentColor" />
+                </svg>
+              </span>
+              <span>Instagram</span>
+            </a>
+            <a
+              href="https://wa.me/919207322053"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2.5 rounded-lg border border-[#25D366]/25 px-4 py-2.5 text-sm text-[#111111] transition-colors hover:border-[#25D366]/60 hover:bg-[#25D366]/[0.05]"
+            >
+              <span className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-[#25D366] text-white shadow-sm">
+                <MessageCircle className="h-6 w-6" strokeWidth={2.2} aria-hidden="true" />
+                <Phone className="absolute h-2.5 w-2.5" strokeWidth={2.8} aria-hidden="true" />
+              </span>
+              <span>WhatsApp</span>
+            </a>
           </div>
 
         </div>
@@ -136,12 +169,15 @@ export const Contact: React.FC<ContactProps> = ({ onDirectSubmitSuccess }) => {
                 <h2 className="mt-1 font-serif text-3xl font-normal tracking-tight text-[#111111] sm:text-4xl">Send Us a Message</h2>
 
                 <form onSubmit={handleSubmit} className="mt-7 space-y-5">
-                  <div className="grid gap-5 sm:grid-cols-2">
+                  <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                     <FormField label="Full Name" icon={UserRound} required>
                       <input required autoComplete="name" value={formData.name} onChange={(event) => updateField('name', event.target.value)} placeholder="Your name" className="w-full rounded-xl border border-[#111111]/15 bg-white py-3 pl-11 pr-4 text-sm text-[#111111] outline-none transition focus:border-[#D41514] focus:ring-2 focus:ring-[#D41514]/10" />
                     </FormField>
                     <FormField label="Email Address" icon={Mail} required>
                       <input required type="email" autoComplete="email" value={formData.email} onChange={(event) => updateField('email', event.target.value)} placeholder="you@example.com" className="w-full rounded-xl border border-[#111111]/15 bg-white py-3 pl-11 pr-4 text-sm text-[#111111] outline-none transition focus:border-[#D41514] focus:ring-2 focus:ring-[#D41514]/10" />
+                    </FormField>
+                    <FormField label="Mobile Number" icon={Smartphone}>
+                      <input type="tel" inputMode="tel" autoComplete="tel" value={formData.mobile} onChange={(event) => updateField('mobile', event.target.value)} placeholder="Your phone number" className="w-full rounded-xl border border-[#111111]/15 bg-white py-3 pl-11 pr-4 text-sm text-[#111111] outline-none transition focus:border-[#D41514] focus:ring-2 focus:ring-[#D41514]/10" />
                     </FormField>
                   </div>
 

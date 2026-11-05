@@ -1,4 +1,4 @@
-import type { ServiceItem, ProjectItem, ProcessStep } from './types';
+import type { ServiceItem, ProjectItem } from './types';
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
@@ -58,99 +58,18 @@ export const SERVICES_DATA: ServiceItem[] = [
 ];
 export const PROJECTS_DATA: ProjectItem[] = [
   {
-    id: 'project-aurora',
-    title: 'AETHEL PRIVATE WEALTH',
-    category: 'Fintech Platform & Architecture',
+    id: 'project-green-realm',
+    title: 'Green Realm Landscape',
+    category: 'Landscape Architecture',
     year: '2026',
-    client: 'Aethel Financial AG — Zurich',
-    description: 'An institutional asset management terminal and bespoke portal designed for ultra-high-net-worth family offices. Features real-time liquidity telemetries and zero-latency transaction verification.',
-    highlight: 'Processed $4.2B in annualized institutional settlements with 12ms interface responsiveness.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=85',
-    tags: ['Distributed Systems', 'Ultra-Performance UI', 'Fintech']
+    image: '/photos/Green+%20Realm%20Desk%20Showcase.png',
+    link: 'https://www.greenrealmlandscape.com/',
   },
   {
     id: 'project-kuro',
     title: 'NOVA AERO-AUTONOMY',
     category: 'Avionics Fleet Interface',
     year: '2025',
-    client: 'Nova Autonomous Systems — Munich',
-    description: 'Next-generation telemetry command center for electric autonomous vertical takeoff transport. Orchestrates multi-vector route simulation with military-grade precision and dark-mode ergonomic clarity.',
-    highlight: 'Real-time 60fps tracking across 400+ simultaneous airspace vectors.',
     image: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1800&q=85',
-    tags: ['Aero Interface', 'Real-Time Telemetry', 'Precision Design']
-  },
-  {
-    id: 'project-chronos',
-    title: 'VALOIS HAUTE HORLOGERIE',
-    category: 'Luxury Brand Experience',
-    year: '2025',
-    client: 'Maison Valois — Geneva',
-    description: 'A sensory digital atelier for an independent Swiss horology manufacture. Micro-interactions mirror mechanical balance wheels, offering buyers high-magnification caliber exploration.',
-    highlight: '320% increase in collector reservation inquiries within 90 days of launch.',
-    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1800&q=85',
-    tags: ['Luxury E-Commerce', 'Kinetic Typography', 'Editorial']
-  },
-  {
-    id: 'project-synapse',
-    title: 'SYNAPSE QUANTUM LABS',
-    category: 'Deep Tech & Research Ecosystem',
-    year: '2024',
-    client: 'Synapse Core — Tokyo & San Francisco',
-    description: 'An interactive scientific data visualization suite for quantum algorithm compilation and error-correction modeling, bringing intuitive clarity to complex qubit state spaces.',
-    highlight: 'Adopted by 8 top-tier research institutions and global quantum consortiums.',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=85',
-    tags: ['Quantum Computing', 'Scientific Viz', 'Enterprise Platform']
   }
-];
-
-export const PROCESS_STEPS: ProcessStep[] = [
-  {
-    step: '01',
-    title: 'DISCOVER',
-    description: 'We deconstruct your core strategic objectives, technological friction points, and market nuances through surgical audit and deep architectural discovery.',
-    deliverables: ['System Architecture Blueprint', 'Technical Feasibility Audit', 'User Persona Vectors']
-  },
-  {
-    step: '02',
-    title: 'STRATEGIZE',
-    description: 'Formulating rigorous technological roadmaps and aesthetic philosophies that eliminate bloat and maximize competitive velocity.',
-    deliverables: ['Product Scope & Phasing', 'Technology Stack Selection', 'Risk Mitigation Framework']
-  },
-  {
-    step: '03',
-    title: 'DESIGN',
-    description: 'Obsessively sculpting bespoke visual identities, fluid kinetic micro-animations, and ergonomic user flows that feel tactile and authoritative.',
-    deliverables: ['Editorial Design Language', 'Interactive Prototypes', 'Complete Design System']
-  },
-  {
-    step: '04',
-    title: 'DEVELOP',
-    description: 'Writing precision, test-driven code with uncompromising attention to clean structure, performance benchmarks, and bank-grade security protocols.',
-    deliverables: ['Production-Grade Codebase', 'Automated CI/CD Pipelines', 'Penetration & Performance Audits']
-  },
-  {
-    step: '05',
-    title: 'LAUNCH',
-    description: 'Zero-downtime global rollout across edge delivery networks with continuous monitoring, telemetry analysis, and post-launch evolution.',
-    deliverables: ['Edge Deployment & CDN', 'Real-Time Observability Suite', 'Continuous Scalability Support']
-  }
-];
-
-export const TECH_STACK = [
-  { name: 'TypeScript', tag: 'Core Language', category: 'Language' },
-  { name: 'React 19', tag: 'UI Framework', category: 'Frontend' },
-  { name: 'Next.js', tag: 'Fullstack / Edge', category: 'Framework' },
-  { name: 'Rust', tag: 'High Performance', category: 'Systems' },
-  { name: 'Go', tag: 'Microservices', category: 'Backend' },
-  { name: 'Node.js', tag: 'Runtime Environment', category: 'Backend' },
-  { name: 'PostgreSQL', tag: 'Relational Database', category: 'Data' },
-  { name: 'Redis', tag: 'In-Memory Caching', category: 'Data' },
-  { name: 'GraphQL', tag: 'API Layer', category: 'Architecture' },
-  { name: 'Docker / K8s', tag: 'Container Orchestration', category: 'DevOps' },
-  { name: 'AWS / Cloudflare', tag: 'Edge Infrastructure', category: 'Cloud' },
-  { name: 'GSAP', tag: 'Kinetic Motion Engine', category: 'Motion' },
-  { name: 'Tailwind CSS', tag: 'Design Architecture', category: 'Styling' },
-  { name: 'PyTorch', tag: 'Applied Neural Models', category: 'AI & Data' },
-  { name: 'Kafka', tag: 'Event Streaming', category: 'Data' },
-  { name: 'Terraform', tag: 'Infra as Code', category: 'DevOps' }
 ];

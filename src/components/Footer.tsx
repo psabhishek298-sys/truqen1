@@ -14,8 +14,9 @@ interface FooterProps {
   onOpenContactModal: () => void;
 }
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export const Footer: React.FC<FooterProps> = ({ onOpenContactModal }) => {
-  const currentYear = new Date().getFullYear();
   const socials = [
     { name: 'GitHub', href: 'https://github.com', Icon: Code2 },
     { name: 'LinkedIn', href: 'https://linkedin.com', Icon: BriefcaseBusiness },
@@ -38,20 +39,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContactModal }) => {
             </div>
 
             <nav aria-label="Footer pages">
-              <h2 className="mb-4 font-accent text-sm font-bold tracking-[0.14em] text-[#111111]/60">
+              <h2 className="mb-4 text-lg font-normal tracking-normal text-[#111111]">
                 Pages
               </h2>
               <ul className="space-y-2.5 text-sm">
                 <li><Link className="transition-opacity hover:opacity-60" to="/">Home</Link></li>
                 <li><Link className="transition-opacity hover:opacity-70" to="/about">About</Link></li>
                 <li><Link className="transition-opacity hover:opacity-70" to="/work">Projects</Link></li>
-                <li><Link className="transition-opacity hover:opacity-70" to="/process">Process</Link></li>
                 <li><Link className="transition-opacity hover:opacity-70" to="/contact">Contact</Link></li>
               </ul>
             </nav>
 
             <nav aria-label="Our services">
-              <h2 className="mb-4 font-accent text-sm font-bold tracking-[0.14em] text-[#111111]/60">
+              <h2 className="mb-4 text-lg font-normal tracking-normal text-[#111111]">
                 Services
               </h2>
               <ul className="space-y-2.5 text-sm">
@@ -66,14 +66,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContactModal }) => {
             </nav>
 
             <address aria-labelledby="footer-contact-heading" className="not-italic">
-              <h2 id="footer-contact-heading" className="mb-4 font-accent text-sm font-bold tracking-[0.14em] text-[#111111]/60">
+              <h2 id="footer-contact-heading" className="mb-4 text-lg font-normal tracking-normal text-[#111111]">
                 Contact
               </h2>
               <ul className="space-y-2.5 text-sm">
                 <li><a className="transition-opacity hover:opacity-60" href="mailto:truqenco@gmail.com">truqenco@gmail.com</a></li>
                 <li><a className="transition-opacity hover:opacity-60" href="https://wa.me/918921345678" target="_blank" rel="noreferrer">+91 9207322053</a></li>
                 <li><a className="transition-opacity hover:opacity-60" href="https://wa.me/918921345678" target="_blank" rel="noreferrer">+91 7994828412</a></li>
-                <li className="text-[#111111]/75">Kozhikode, Kerala, India</li>
+                <li className="text-[#111111]/75">Kerala, India</li>
               </ul>
             </address>
 
@@ -109,7 +109,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContactModal }) => {
           </div>
 
           <div className="flex flex-col items-start justify-between gap-3 pt-5 text-xs text-[#111111]/60 sm:flex-row sm:items-center">
-            <span>© {currentYear} TRUQEN DIGITAL AG. ALL RIGHTS RESERVED.</span>
+            <span>© {CURRENT_YEAR} TRUQEN DIGITAL AG. ALL RIGHTS RESERVED.</span>
             <div className="flex items-center gap-5">
               <span>Engineering Tomorrow, Today.</span>
               <button
